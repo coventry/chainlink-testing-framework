@@ -113,7 +113,7 @@ func (g *Geth) getEth1ContainerRequest() (*tc.ContainerRequest, error) {
 
 	return &tc.ContainerRequest{
 		Name:            g.ContainerName,
-		AlwaysPullImage: true,
+		AlwaysPullImage: false, // XXX: 
 		Image:           g.GetImageWithVersion(),
 		ExposedPorts:    []string{NatPortFormat(DEFAULT_EVM_NODE_HTTP_PORT), NatPortFormat(DEFAULT_EVM_NODE_WS_PORT)},
 		Networks:        g.Networks,
